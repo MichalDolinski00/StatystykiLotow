@@ -21,7 +21,7 @@ public class FlightsController extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-        RequestMaker test = new RequestMaker();
-        System.out.println(test.getData()); // taki test czy połączenie działa
+//        RequestMaker test = new RequestMaker();
+//        System.out.println(test.getData()); // taki test czy połączenie działa
     }
 }
