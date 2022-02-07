@@ -8,6 +8,8 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
@@ -15,6 +17,7 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
 public class Flights {
@@ -174,7 +177,12 @@ public class Flights {
         series.getData().add(new XYChart.Data<>(DayOfWeek.SUNDAY.toString(), 0));
         graph.getData().addAll(series);
 
-        ArrayList<Airfield> airfields = GettingAirfields(); // na razie nie używane ale działa spoko
+
+
+        ArrayList<Airfield> airfields = GettingAirfields();
+        ObservableList<Airfield> options = FXCollections.observableArrayList(airfields);
+        cb1.setItems(options);
+
 
     }
 
@@ -212,6 +220,11 @@ public class Flights {
         return airfields;
 
     }
+
+    @FXML
+    private ComboBox<Airfield> cb1;
+
+
 
 
 }

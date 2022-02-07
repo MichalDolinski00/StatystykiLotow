@@ -30,4 +30,9 @@ public class Airfield {
     public String getAirfieldName() {
         return airfieldName;
     }
+
+    @Override
+    public String toString() {
+        return  city +"-" +icaoCode ;
+    }
 }
