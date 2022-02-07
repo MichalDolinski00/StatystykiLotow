@@ -1,0 +1,185 @@
+Miasto (lotnisko)	Kod IATA	Kod ICAO	Nazwa lotniska
+Bydgoszcz	BZG 	EPBY	Szwederowo
+Gdańsk	GDN	EPGD	Rębiechowo / im. Lecha Wałęsy
+Katowice	KTW	EPKT	Pyrzowice
+Kraków	KRK	EPKK	Balice / im. Jana Pawła II
+Lublin	LUZ	EPLB	Port Lotniczy Lublin - Świdnik
+Łódź	LCJ	EPLL	Lublinek
+Olsztyn-Mazury (Szymany)	SZY	EPSY	Port Lotniczy Olsztyn-Mazury w Szymanach
+Poznań	POZ	EPPO	Ławica im. Henryka Wieniawskiego
+Radom	RDO	EPRA	Port Lotniczy Radom Sadków
+Rzeszów	RZE	EPRZ	Jasionka
+Szczecin	SZZ	EPSC	Goleniów im. NSZZ Solidarność
+Warszawa - Okęcie	WAW	EPWA	Okęcie / im. Fryderyka Chopina
+Warszawa - Modlin	WMI	EPMO	Modlin
+Wrocław	WRO	EPWR	Strachowice im. Mikołaja Kopernika
+Alesund	AES	ENAL	Vigra
+Amsterdam	AMS	EHAM	Schiphol
+Aberdeen	ABZ	EGPD	
+Alicante	ALC	LEAL	Alicante-Elche
+Ateny	ATH	LGAV	Eleftherios Venizelos International
+Atlanta	ATL	KATL	William B Hartsfield
+Barcelona	BCN	LEBL	El Prat
+Bari	BRI	LIBD	Bari Palese "Karol Wojtyla" Airport
+Basel - Mulhouse	BSL	LSFB	EuroAirport
+Bejrut	BEY	OLBA	Rafic Hariri Intl
+Belgrad	BEG	LYBE	Nikola Tesla Intl Airport
+Bergen	BGO	ENBR	Flesland
+Belfast	BHD	EGAC	Belfast City Airport
+Berlin	TXL	EDDT	Tegel
+Berno	BRN	LSZB	Belp
+Bilbao	BIO	LEBB	Sondica
+Birmingham	BHX	EGBB	International
+Bolonia	BLQ	LIPE	Guglielmo Marconi
+Bordeaux	BOD	LFBD	Merignac
+Boston	BOS	KBOS	Logan International
+Bristol	BRS	EGGD	Dyce
+Bruksela	BRU	EBBR	National (Zaventem)
+Bruksela	CRL	EBCI	Charleroi Brussels South
+Budapeszt	BUD	LHBP	Ferihegy
+Bukareszt	OTP	LROP	Otopeni International - Henri Coanda
+Burgas	BOJ	LBBG	Dyce
+Calgary	YYC	CYYC	International, Alta
+Charlotte	CLT	KCLT	Charlotte / Douglas International Airport
+Chicago (O`Hare Intl)	ORD	KORD	O`Hare International
+Cincinnati	CVG	KCVG	Cincinnati / Northern Kentucky International Airport
+Cleveland	CLE	KCLE	Cleveland-Hopkins International Airport
+Dallas - Fort Worth	DFW	KDFW	Dallas / Fort Worth International Airport
+Denver	DEN	KDEN	International
+Detroit	DET	KDET	Detroit City Airport
+Doha	DOH	OTBD	Hamad International
+Doncaster-Sheffield	DSA	EGCN	Robin Hood Doncaster Sheffield Airport
+Dortmund	DTM	EDLW	Wickede
+Dubaj	DXB	OMDB	Dubai International
+Dubaj	DWC	OMDW	Al Makhtoum International
+Dublin	DUB	EIDW	EIDW
+Dusseldorf	DUS	EDDL	International
+Edinburgh	EDI	EGPH	Turnhouse
+Edmonton		CZVL	Villeneuve
+Eindhoven	EIN	EHEH	Eindhoven Airport
+Erywań	EVN	UDYZ	Zvarnots
+Filadelfia	PHL	KPHL	International
+Florencja	FLR	LIRQ	Peretola
+Fort Lauderdale	FLL	KFLL	Fort Lauderdale / Hollywood International Airport
+Frankfurt	FRA	EDDF	International
+Frankfurt Hahn	HHN	EDFH	International
+Genewa	GVA	LSGG	Cointrin
+Genua	GOA	LIMJ	Sestri
+Glasgow	GLA	EGPF	International
+Göteborg	GOT	ESGG	Landvetter
+Graz	GRZ	LOWG	Thalerhof
+Halifax	YHZ	CYHZ	Halifax International Airport
+Hamburg	HAM	EDDH	Fuhlsbuettel
+Helsinki	HEL	EFHK	Vantaa
+Heraklion	HER	LGIR	Nikos Kazantzakis
+Honolulu	MCO	PHNL	Honolulu International Airport
+Houston (G. Bush Intl)	IAH	KIAH	George Bush Intercontinental
+Indianapolis	IND	KIND	Indianapolis International Airport
+Innsbruck	INN	LOWI	Kranebitten
+Inverness	INV	EGPE	Dalcross
+Istambuł	IST	LTBA	Ataturk
+Kaliningrad	KGD	-	Kaliningrad
+Keflavik	KEF	BIKF	Keflavik International Airport
+Kijów	KBP	UKBB	Borispol
+Klagenfurt	KLU	LOWK	Klagenfurt
+Kopenhaga	CPH	EKCH	Kastrup
+Korfu	CFU	LGKR	Ioannis Kapodistrias
+Koszyce	KSC	LZKZ	
+Kutaisi	KUT	UGKO	Kopitnari
+Larnaka	LCA	LCLK	Larnaka
+Las Vegas	LAS	KLAS	Las Vegas, Mc Carran International Airport
+Linz	LNZ	LOWL	Hoersching
+Liverpool	LPL	EGGP	John Lennon Intl Airport
+Lizbona	LIS	LPPT	Portela
+Ljubljana	LJU	LJLJ	Brnik
+Londyn	LHR	EGLL	Heathrow
+Londyn	LGW	EGKK	Gatwick
+Londyn	LCY	EGLC	London City Airport
+Londyn	LTN	EGGW	Luton International Airport
+Londyn	STN	EGSS	Stansted
+Los Angeles	LAX	KLAX	Los Angeles International Airport
+Luksemburg	LUX	ELLX	Hoersching
+Lwów	LWO	UKLL	Lviv
+Lyon	LYS	LFLL	Satolas
+Madryt	MAD	LEMD	Barajas
+Malaga	AGP	LEMG	Malaga Costa del Sol Airport
+Malmo	MMX	ESMS	Sturup
+Malta	MLA	LMML	International Airport
+Manchester	MAN	EGCC	Ringway
+Marsylia	MRS	LFML	Marignane
+Melbourne	MEL	YMML	Tullamarine
+Miami	MIA	KMIA	Miami International Airport
+Mediolan	MXP	LIMC	Malpensa
+Mediolan	LIN	LIML	Linate
+Mediolan	BGY	LIME	Bergamo - Orio Al Serio
+Minneapolis - St. Paul	MSP	KMSP	Minneapolis St. Paul International Airport
+Mińsk	MSQ	UMMS	Minsk International 2
+Montreal	YUL	CYUL	Pierre Elliot Trudeau International
+Montreal	YMX	CYMX	Mirabel
+Moskwa	SVO	UUEE	Sheremyetyevo
+Monachium	MUC	EDDM	Franz Josef Strauss
+Neapol	NAP	LIRN	Capodichino
+Nicea	NCE	LFMN	Cote d`Azur
+Nowy Orlean	MSY	KMSY	New Orleans International Airport
+Nowy Jork	JFK	KJFK	Kennedy International Airport
+Nowy Jork	EWR	KEWR	Newark International Airport
+Nowy Jork	LGA	KLGA	La Guardia
+Odessa	ODS	UKOO	Odessa
+Orlando	MCO	KMCO	Orlando International Airport
+Osaka	KIX	RJBB	Kansai
+Oslo	OSL	ENGM	Gardermoen
+Oslo Torp	TRF	ENTO	Oslo Torp Lufthavn
+Ottawa	YOW	CYOW	Ottawa International Ontario
+Palma de Mallorca	PMI	LEPA	Son San Juan
+Paryż	CDG	LFPG	Charles de Gaulle
+Paryż	ORY	LFPO	Orly
+Paryż	BVA	LFOB	Beauvais - Tille Airport
+Paryż	LBG	LFPB	Le Bourget
+Pekin	PEK	ZBAA	Capital International Airport
+Phoenix	PHX	KPHX	Sky Harbor International Airport
+Pittsburgh	PIT	KPIT	Pittsburgh International Airport
+Portland, Oregon	PDX	KPDX	Portland International Airport
+Porto	OPO	LPPR	Francisco Sa Carneiro Airport
+Praga	PRG	LKPR	Ruzyne
+Quebec	YQB	CYQB	Quebec
+Ryga	RIX	EVRA	International Airport
+Rzym	FCO	LIRF	Fiumicino - Leonardo da Vinci
+Rzym	CIA	LIRA	Ciampino
+Salt Lake City	SLC	KSLC	Salt Lake City International Airport
+Salzburg	SZG	LOWS	Wolfgang Amadeus Mozart
+Saint John`s, Nowa Funlandia	YYT	CYYT	St. John`s, Nfld
+Saint Louis	STL	KSTL	Lambert - St. Louis International Airport
+San Diego	SAN	KSAN	San Diego International-Lindbergh Field
+San Francisco	SFO	KSFO	San Francisco International Airport
+Sankt Petersburg	LED	ULLI	Pulkovo
+Saskatoon	YXE	CYXE	Saskatoon
+Seattle	SEA	KSEA	Seattle - Tacoma International Airport
+Sofia	SOF	LBSF	Vrajdebna
+Split	SPU	LDSP	Zracna Luka
+Stavanger	SVG	ENZV	Sola
+Stuttgart	STR	EDDS	Echterdingen
+Sztokholm	ARN	ESSA	Arlanda
+Sztokholm	BMA	ESSB	Bromma
+Sztokholm	NYO	-	Skavsta
+Sydney	SYD	YSSY	Kingsford Smith
+Tallinn	TLL	EETN	Ulemiste
+Tampa	TPA	KTPA	Tampa International Airport
+Tel Aviv	TLV	LLBG	Ben-Gurion International Airport
+Tokio	NRT	RJAA	Narita
+Tokio	HND	RJTT	Haneda
+Toronto	YYZ	CYYZ	Lester B. Pearson
+Tuluza	TLS	LFBO	Blagnac
+Trieste	TRS	LIVT	Dei Legionari
+Tunis	TUN	DTTA	Carthage
+Turyn	TRN	LIMF	Caselle
+Vancouver	YVR	CYVR	Vancouver International
+Wenecja	VCE	LIPZ	Tessera - Marco Polo
+Werona	VRN	LIPX	Villafranca
+Wiedeń	VIE	LOWW	Schwechat
+Wilno	VNO	EYVI	International
+Waszyngton DC	IAD	KIAD	Dulles International Airport
+Waszyngton DC	DCA	KDCA	Ronald Reagan National Airport
+Winnipeg	YWG	CYWG	Winnipeg Int. Airportman.
+Zadar	ZAD	LDZD	
+Zagrzeb	ZAG	LDZA	Pleso
+Zurych	ZRH	LSZH	Kloten
