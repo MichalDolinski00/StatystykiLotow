@@ -101,7 +101,8 @@ public class Flights {
         if (arrival.equals("")){
             series.setName("From " + departure + " since " + from + " to " + to);
             maker = new RequestMaker(to, departure, (int)days);
-            for (Flight flight: maker.getFlights())
+            for (Flight flight: maker.getFlights()){
+                System.out.println(flight);
                 switch (flight.getDepartureDay()){
                     case MONDAY -> daysOfWeek[0]++;
                     case TUESDAY -> daysOfWeek[1]++;
@@ -111,12 +112,13 @@ public class Flights {
                     case SATURDAY -> daysOfWeek[5]++;
                     case SUNDAY -> daysOfWeek[6]++;
                 }
+            }
         } else if (departure.equals("")){
             series.setName("To " + arrival + " since " + from + " to " + to);
-            maker = new RequestMaker(to, departure, (int)days);
+            maker = new RequestMaker(to, arrival, (int)days);
             maker.setDeparture(false);
             for (Flight flight: maker.getFlights())
-                switch (flight.getDepartureDay()){
+                switch (flight.getArrivalDay()){
                     case MONDAY -> daysOfWeek[0]++;
                     case TUESDAY -> daysOfWeek[1]++;
                     case WEDNESDAY -> daysOfWeek[2]++;
@@ -129,7 +131,8 @@ public class Flights {
             series.setName("From " + departure + " to "+arrival+" since " + from + " to " + to);
             maker = new RequestMaker(to, departure, (int)days);
             for (Flight flight: maker.getFlights()){
-                if (flight.getArrival().equals(arrival))
+                System.out.println(flight.getTo());
+                if (flight.getTo().equals(arrival))
                 switch (flight.getDepartureDay()){
                     case MONDAY -> daysOfWeek[0]++;
                     case TUESDAY -> daysOfWeek[1]++;

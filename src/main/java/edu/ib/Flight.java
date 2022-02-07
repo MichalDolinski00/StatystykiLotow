@@ -10,8 +10,8 @@ public class Flight {
     private LocalDate arrival;
 
     public Flight(String from, String to, LocalDate departure, LocalDate arrival) {
-        this.from = from;
-        this.to = to;
+        this.from = from.replace("\"","");
+        this.to = to.replace("\"","");
         this.departure = departure;
         this.arrival = arrival;
     }
