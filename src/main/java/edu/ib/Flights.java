@@ -34,6 +34,9 @@ public class Flights {
     private CategoryAxis a_dayOfTheWeek;
 
     @FXML
+    private Button clearButton;
+
+    @FXML
     private NumberAxis a_numberOfPlanes;
 
     @FXML
@@ -50,6 +53,22 @@ public class Flights {
 
     @FXML
     private Button plotButton;
+
+
+    @FXML
+    void clearAction(ActionEvent event) {
+        graph.getData().clear();
+        XYChart.Series series = new XYChart.Series<>();
+        series.getData().add(new XYChart.Data<>(DayOfWeek.MONDAY.toString(), 0));
+        series.getData().add(new XYChart.Data<>(DayOfWeek.TUESDAY.toString(), 0));
+        series.getData().add(new XYChart.Data<>(DayOfWeek.WEDNESDAY.toString(), 0));
+        series.getData().add(new XYChart.Data<>(DayOfWeek.THURSDAY.toString(), 0));
+        series.getData().add(new XYChart.Data<>(DayOfWeek.FRIDAY.toString(), 0));
+        series.getData().add(new XYChart.Data<>(DayOfWeek.SATURDAY.toString(), 0));
+        series.getData().add(new XYChart.Data<>(DayOfWeek.SUNDAY.toString(), 0));
+        graph.getData().addAll(series);
+    }
+
 
     @FXML
     void plotAction(ActionEvent event) {
@@ -70,25 +89,67 @@ public class Flights {
         }
         if (from==null){
             days = 7;
+            from = to.minusDays(7);
         } else {
             days = ChronoUnit.DAYS.between(from,to);
         }
-        RequestMaker maker = new RequestMaker();
-
-
         if (arrival.equals("") && departure.equals(""))
             return;
-        if (arrival.equals(""))
-            maker.
-
+        RequestMaker maker;
+        int[] daysOfWeek = new int[7];
         XYChart.Series series = new XYChart.Series<>();
-        series.getData().add(new XYChart.Data<>(DayOfWeek.MONDAY.toString(), 10));
-        series.getData().add(new XYChart.Data<>(DayOfWeek.TUESDAY.toString(), 8));
-        series.getData().add(new XYChart.Data<>(DayOfWeek.WEDNESDAY.toString(), 4));
-        series.getData().add(new XYChart.Data<>(DayOfWeek.THURSDAY.toString(), 5));
-        series.getData().add(new XYChart.Data<>(DayOfWeek.FRIDAY.toString(), 3));
-        series.getData().add(new XYChart.Data<>(DayOfWeek.SATURDAY.toString(), 2));
-        series.getData().add(new XYChart.Data<>(DayOfWeek.SUNDAY.toString(), 1));
+        if (arrival.equals("")){
+            series.setName("From " + departure + " since " + from + " to " + to);
+            maker = new RequestMaker(to, departure, (int)days);
+            for (Flight flight: maker.getFlights())
+                switch (flight.getDepartureDay()){
+                    case MONDAY -> daysOfWeek[0]++;
+                    case TUESDAY -> daysOfWeek[1]++;
+                    case WEDNESDAY -> daysOfWeek[2]++;
+                    case THURSDAY -> daysOfWeek[3]++;
+                    case FRIDAY -> daysOfWeek[4]++;
+                    case SATURDAY -> daysOfWeek[5]++;
+                    case SUNDAY -> daysOfWeek[6]++;
+                }
+        } else if (departure.equals("")){
+            series.setName("To " + arrival + " since " + from + " to " + to);
+            maker = new RequestMaker(to, departure, (int)days);
+            maker.setDeparture(false);
+            for (Flight flight: maker.getFlights())
+                switch (flight.getDepartureDay()){
+                    case MONDAY -> daysOfWeek[0]++;
+                    case TUESDAY -> daysOfWeek[1]++;
+                    case WEDNESDAY -> daysOfWeek[2]++;
+                    case THURSDAY -> daysOfWeek[3]++;
+                    case FRIDAY -> daysOfWeek[4]++;
+                    case SATURDAY -> daysOfWeek[5]++;
+                    case SUNDAY -> daysOfWeek[6]++;
+                }
+        } else {
+            series.setName("From " + departure + " to "+arrival+" since " + from + " to " + to);
+            maker = new RequestMaker(to, departure, (int)days);
+            for (Flight flight: maker.getFlights()){
+                if (flight.getArrival().equals(arrival))
+                switch (flight.getDepartureDay()){
+                    case MONDAY -> daysOfWeek[0]++;
+                    case TUESDAY -> daysOfWeek[1]++;
+                    case WEDNESDAY -> daysOfWeek[2]++;
+                    case THURSDAY -> daysOfWeek[3]++;
+                    case FRIDAY -> daysOfWeek[4]++;
+                    case SATURDAY -> daysOfWeek[5]++;
+                    case SUNDAY -> daysOfWeek[6]++;
+                }
+            }
+
+        }
+
+        series.getData().add(new XYChart.Data<>(DayOfWeek.MONDAY.toString(), daysOfWeek[0]));
+        series.getData().add(new XYChart.Data<>(DayOfWeek.TUESDAY.toString(), daysOfWeek[1]));
+        series.getData().add(new XYChart.Data<>(DayOfWeek.WEDNESDAY.toString(), daysOfWeek[2]));
+        series.getData().add(new XYChart.Data<>(DayOfWeek.THURSDAY.toString(), daysOfWeek[3]));
+        series.getData().add(new XYChart.Data<>(DayOfWeek.FRIDAY.toString(), daysOfWeek[4]));
+        series.getData().add(new XYChart.Data<>(DayOfWeek.SATURDAY.toString(), daysOfWeek[5]));
+        series.getData().add(new XYChart.Data<>(DayOfWeek.SUNDAY.toString(), daysOfWeek[6]));
         graph.getData().addAll(series);
     }
 

@@ -94,34 +94,41 @@ public class RequestMaker {
     }
 
     public String getData(){
-        String url = "https://USERNAME:PASSWORD@opensky-network.org/api/flights/"+String.valueOf(departure).replace("false", "arrival").replace("true", "departure")+"?" +
-                "airport=" + airport +
-                "&begin="+date.minusDays(period).atStartOfDay(zoneId).toEpochSecond() +  // data 5 dni temu w unixie (test czy działa)
-                "&end="+date.atStartOfDay(zoneId).toEpochSecond();
-        StringBuffer response = new StringBuffer();
-        System.out.println(url);
+        StringBuilder response = new StringBuilder();
+        int past = 0;
+        while (period>0){
+            String url = "https://USERNAME:PASSWORD@opensky-network.org/api/flights/"+String.valueOf(departure).replace("false", "arrival").replace("true", "departure")+"?" +
+                    "airport=" + airport +
+                    "&begin="+date.minusDays(Math.min(period,7)+past).atStartOfDay(zoneId).toEpochSecond() +  // data 5 dni temu w unixie (test czy działa)
+                    "&end="+date.minusDays(past).atStartOfDay(zoneId).toEpochSecond();
 
-        try {
-            URL obj = new URL(url);
+            System.out.println(url);
 
-            HttpURLConnection connection = (HttpURLConnection) obj.openConnection();
-            connection.setRequestMethod("GET");
+            try {
+                URL obj = new URL(url);
 
-            int responceCode = connection.getResponseCode();
-            System.out.println("Code" + responceCode); // powinien być 200
+                HttpURLConnection connection = (HttpURLConnection) obj.openConnection();
+                connection.setRequestMethod("GET");
 
-            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                int responceCode = connection.getResponseCode();
+                System.out.println("Code" + responceCode); // powinien być 200
 
-            String line;
-            while ((line = reader.readLine()) != null){
-                response.append(line);
+                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+
+                String line;
+                while ((line = reader.readLine()) != null){
+                    response.append(line);
+                }
+                reader.close();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            reader.close();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+            period -= 7;
+            past += 7;
         }
-        return response.toString();
+
+        return response.toString().replace("]",",");
     }
 }

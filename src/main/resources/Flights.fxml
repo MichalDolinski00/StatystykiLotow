@@ -14,10 +14,10 @@
    <children>
       <BarChart fx:id="graph" prefHeight="400.0" prefWidth="356.0">
         <xAxis>
-          <CategoryAxis fx:id="a_dayOfTheWeek" side="BOTTOM" />
+          <CategoryAxis fx:id="a_dayOfTheWeek" label="Day of Week" side="BOTTOM" />
         </xAxis>
         <yAxis>
-          <NumberAxis fx:id="a_numberOfPlanes" side="LEFT" />
+          <NumberAxis fx:id="a_numberOfPlanes" label="Number of flights" side="LEFT" />
         </yAxis>
       </BarChart>
       <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="259.0">
@@ -50,6 +50,7 @@
                </children>
             </HBox>
             <Button fx:id="plotButton" mnemonicParsing="false" onAction="#plotAction" text="Plot" />
+            <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearAction" text="Clear graph" />
          </children>
       </VBox>
    </children>
