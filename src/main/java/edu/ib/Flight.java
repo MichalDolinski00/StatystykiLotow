@@ -1,5 +1,6 @@
 package edu.ib;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 public class Flight {
@@ -55,5 +56,14 @@ public class Flight {
                 ", departure=" + departure +
                 ", arrival=" + arrival +
                 '}';
+    }
+
+    public DayOfWeek getDepartureDay(){
+        LocalDate date = getDeparture();
+        return date.getDayOfWeek();
+    }
+    public DayOfWeek getArrivalDay(){
+        LocalDate date = getArrival();
+        return date.getDayOfWeek();
     }
 }

@@ -18,6 +18,16 @@ public class RequestMaker {
     private String airport = "EPWR";
     private int period = 7;
 
+    public boolean isDeparture() {
+        return departure;
+    }
+
+    public void setDeparture(boolean departure) {
+        this.departure = departure;
+    }
+
+    private boolean departure = true;
+
     public RequestMaker(LocalDate date, String airport, int period) {
         this.date = date;
         this.airport = airport;
@@ -84,9 +94,9 @@ public class RequestMaker {
     }
 
     public String getData(){
-        String url = "https://USERNAME:PASSWORD@opensky-network.org/api/flights/departure?" +
+        String url = "https://USERNAME:PASSWORD@opensky-network.org/api/flights/"+String.valueOf(departure).replace("false", "arrival").replace("true", "departure")+"?" +
                 "airport=" + airport +
-                "&begin="+date.minusDays(5).atStartOfDay(zoneId).toEpochSecond() +  // data 5 dni temu w unixie (test czy działa)
+                "&begin="+date.minusDays(period).atStartOfDay(zoneId).toEpochSecond() +  // data 5 dni temu w unixie (test czy działa)
                 "&end="+date.atStartOfDay(zoneId).toEpochSecond();
         StringBuffer response = new StringBuffer();
         System.out.println(url);
@@ -107,21 +117,11 @@ public class RequestMaker {
                 response.append(line);
             }
             reader.close();
-
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
         return response.toString();
-
     }
-
-
-
-
-
-
-
-
 }
