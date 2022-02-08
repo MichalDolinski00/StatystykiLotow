@@ -1,5 +1,8 @@
 package edu.ib;
 
+/**
+ * A class that represents an airfield. Contains moist important information such as city name and codes.
+ */
 public class Airfield {
 
     private String city;

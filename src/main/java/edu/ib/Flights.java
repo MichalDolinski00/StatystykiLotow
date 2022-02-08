@@ -73,8 +73,15 @@ public class Flights {
 
     @FXML
     void plotAction(ActionEvent event) {
-        String departure = departureAirfieldField.getText().toString();
-        String arrival = arrivalAirportField.getText().toString();
+
+
+//        String departure = departureAirfieldField.getText().toString();
+//        String arrival = arrivalAirportField.getText().toString();
+
+        String departure = cb1.getValue().getIcaoCode();
+        String arrival =  cb2.getValue().getIcaoCode();
+
+
         LocalDate to;
         LocalDate from;
         long days;
@@ -178,15 +185,21 @@ public class Flights {
         graph.getData().addAll(series);
 
 
-
         ArrayList<Airfield> airfields = GettingAirfields();
         ObservableList<Airfield> options = FXCollections.observableArrayList(airfields);
         cb1.setItems(options);
+        cb2.setItems(options);
 
+
+        //String st = cb1.getValue().getIcaoCode(); // tak można dobrać się do ICAO wybranego lotniska
 
     }
 
-    private  ArrayList<Airfield> GettingAirfields() {
+    /**
+     * Creates a list of Airfield items based on a file containing data.
+     * @return a list of Airfield items
+     */
+    private ArrayList<Airfield> GettingAirfields() {
         // naprawde nie wiem czemu nie widzie tego pliku kiedy podaję mu tylko część ścieżki
         File file = new File("C:\\Users\\olins\\Desktop\\Projekty IntelliJ\\StatystykiLotow\\src\\main\\java\\Lotniska.txt");
 
@@ -225,6 +238,8 @@ public class Flights {
     private ComboBox<Airfield> cb1;
 
 
+    @FXML
+    private ComboBox<Airfield> cb2;
 
 
 }
