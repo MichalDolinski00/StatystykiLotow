@@ -3,12 +3,22 @@ package edu.ib;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 
+/**
+ * A class representing single flight.
+ */
 public class Flight {
     private String from;
     private String to;
     private LocalDate departure;
     private LocalDate arrival;
 
+    /**
+     * Constructor
+     * @param from airfields ICAO code
+     * @param to airfields ICAO code
+     * @param departure date of departure
+     * @param arrival date of arrival
+     */
     public Flight(String from, String to, LocalDate departure, LocalDate arrival) {
         this.from = from.replace("\"","");
         this.to = to.replace("\"","");
@@ -58,10 +68,19 @@ public class Flight {
                 '}';
     }
 
+    /**
+     * Returns day of the week of departure
+     * @return DayOfWeek
+     */
     public DayOfWeek getDepartureDay(){
         LocalDate date = getDeparture();
         return date.getDayOfWeek();
     }
+
+    /**
+     * Returns day of the week of arrival
+     * @return DayOfWeek
+     */
     public DayOfWeek getArrivalDay(){
         LocalDate date = getArrival();
         return date.getDayOfWeek();

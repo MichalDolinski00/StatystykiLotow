@@ -6,11 +6,19 @@ package edu.ib;
 public class Airfield {
 
     private String city;
+
     private String iataCode;
+
     private String icaoCode;
+
     private String airfieldName;
 
-
+    /**
+     * @param city         Citi in which the airfield is located.
+     * @param iataCode     Airfields IATA code.
+     * @param icaoCode     Airfields ICAO code.
+     * @param airfieldName Airfields name.
+     */
     public Airfield(String city, String iataCode, String icaoCode, String airfieldName) {
         this.city = city;
         this.iataCode = iataCode;
@@ -35,7 +43,10 @@ public class Airfield {
     }
 
     @Override
+    /*
+      To string is overridden to show most important information in ComboBox
+     */
     public String toString() {
-        return  city +"-" +icaoCode ;
+        return city + "-" + icaoCode;
     }
 }

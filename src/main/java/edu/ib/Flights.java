@@ -191,8 +191,6 @@ public class Flights {
         cb2.setItems(options);
 
 
-        //String st = cb1.getValue().getIcaoCode(); // tak można dobrać się do ICAO wybranego lotniska
-
     }
 
     /**
