@@ -1,9 +1,6 @@
 package edu.ib;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -20,6 +17,7 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.FileChooser;
@@ -67,6 +65,11 @@ public class Flights {
 
     @FXML
     private Button plotButton;
+    @FXML
+    private ComboBox<Airfield> cb1;
+
+    @FXML
+    private ComboBox<Airfield> cb2;
 
 
     @FXML
@@ -83,13 +86,52 @@ public class Flights {
         graph.getData().addAll(series);
     }
 
+    private ArrayList<Airfield> GettingAirfields() {
+        // naprawde nie wiem czemu nie widzie tego pliku kiedy podaję mu tylko część ścieżki
+        File file = new File("C:\\Users\\Dell\\IdeaProjects\\StatystykiLotow\\src\\main\\java\\Lotniska.txt");
+
+        ArrayList<Airfield> airfields = new ArrayList<Airfield>();
+        try {
+            Reader reader = new FileReader(file);
+            BufferedReader br = new BufferedReader(reader);
+            String st1;
+            String[] st2 = new String[4];
+            while ((st1 = br.readLine()) != null) {
+                st2 = st1.split("\t");
+                if (st2.length == 4)
+                    airfields.add(new Airfield(st2[0], st2[1], st2[2], st2[0]));
+                else
+                    airfields.add(new Airfield(st2[0], st2[1], st2[2], "-"));   // jak nie ma ostatniego to jest bez nazwy
+            }
+
+
+            br.close();
+            reader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+//        for (Airfield airfield : airfields){
+//            System.out.println(airfield.getIcaoCode());
+//        }
+
+        return airfields;
+
+    }
+
     public void getUserInput(){
-        departure = departureAirfieldField.getText();
-        arrival = arrivalAirportField.getText();
+//        departure = departureAirfieldField.getText();
+//        arrival = arrivalAirportField.getText();
+        if (cb1.getValue() != null && !cb1.getValue().getIcaoCode().equals("null")) departure = cb1.getValue().getIcaoCode();
+        else departure = "";
+        if (cb2.getValue() != null && !cb2.getValue().getIcaoCode().equals("null")) arrival = cb2.getValue().getIcaoCode();
+        else arrival = "";
         try{
             to = LocalDate.parse(dateToField.getText());
         }catch (Exception e){
-            return;
+            to = LocalDate.now();
         }
         try {
             from = LocalDate.parse(dateFromField.getText());
@@ -128,6 +170,7 @@ public class Flights {
                     fileWriter = new FileWriter(fileToWrite);
                     bufferedWriter = new BufferedWriter(fileWriter);
                     bufferedWriter.write("Flight from\tTo\tDeparture Date\tArrival Date\tDeparture Day\tArrival Day");
+                    bufferedWriter.newLine();
                     for (Flight flight: maker.getFlights()){
                         bufferedWriter.write(flight.getFrom() + "\t" + flight.getTo() + "\t" + flight.getDeparture()
                                 + "\t" + flight.getArrival() + "\t" + flight.getDepartureDay() +"\t"+ flight.getArrivalDay());
@@ -145,8 +188,6 @@ public class Flights {
 
     @FXML
     void plotAction(ActionEvent event) {
-        String departure = departureAirfieldField.getText();
-        String arrival = arrivalAirportField.getText();
         getUserInput();
         if (arrival.equals("") && departure.equals(""))
             return;
@@ -187,7 +228,7 @@ public class Flights {
             series.setName("From " + departure + " to "+arrival+" since " + from + " to " + to);
             maker = new RequestMaker(to, departure, (int)days);
             for (Flight flight: maker.getFlights()){
-                System.out.println(flight.getTo());
+//                System.out.println(flight.getTo());
                 if (flight.getTo().equals(arrival))
                     switch (flight.getDepartureDay()){
                         case MONDAY -> daysOfWeek[0]++;
@@ -231,6 +272,11 @@ public class Flights {
         series.getData().add(new XYChart.Data<>(DayOfWeek.SATURDAY.toString(), 0));
         series.getData().add(new XYChart.Data<>(DayOfWeek.SUNDAY.toString(), 0));
         graph.getData().addAll(series);
+
+        ArrayList<Airfield> airfields = GettingAirfields();
+        ObservableList<Airfield> options = FXCollections.observableArrayList(airfields);
+        cb1.setItems(options);
+        cb2.setItems(options);
     }
 
 }

@@ -41,11 +41,11 @@
                </VBox.margin></Text>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <TextField fx:id="dateFromField">
+                  <TextField fx:id="dateFromField" promptText="YYYY-MM-DD">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin></TextField>
-                  <TextField fx:id="dateToField">
+                  <TextField fx:id="dateToField" promptText="YYYY-MM-DD">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin></TextField>

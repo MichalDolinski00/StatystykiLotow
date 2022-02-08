@@ -1,4 +1,4 @@
-Miasto (lotnisko)	Kod IATA	Kod ICAO	Nazwa lotniska
+null	null	null	null
 Bydgoszcz	BZG 	EPBY	Szwederowo
 Gdańsk	GDN	EPGD	Rębiechowo / im. Lecha Wałęsy
 Katowice	KTW	EPKT	Pyrzowice
