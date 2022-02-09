@@ -1,6 +1,6 @@
 null	null	null	null
 Bydgoszcz	BZG 	EPBY	Szwederowo
-Gdansk	GDN	EPGD	Rebiechowo / im. Lecha Wałesy
+Gdansk	GDN	EPGD	Rebiechowo / im. Lecha Walesy
 Katowice	KTW	EPKT	Pyrzowice
 Krakow	KRK	EPKK	Balice / im. Jana Pawla II
 Lublin	LUZ	EPLB	Port Lotniczy Lublin - Swidnik
@@ -9,13 +9,13 @@ Olsztyn-Mazury (Szymany)	SZY	EPSY	Port Lotniczy Olsztyn-Mazury w Szymanach
 Poznan	POZ	EPPO	Lawica im. Henryka Wieniawskiego
 Radom	RDO	EPRA	Port Lotniczy Radom Sadkow
 Rzeszow	RZE	EPRZ	Jasionka
-Szczecin	SZZ	EPSC	Goleniów im. NSZZ Solidarnosc
+Szczecin	SZZ	EPSC	Goleniow im. NSZZ Solidarnosc
 Warszawa - Okecie	WAW	EPWA	Okecie / im. Fryderyka Chopina
 Warszawa - Modlin	WMI	EPMO	Modlin
-Wrocław	WRO	EPWR	Strachowice im. Mikołaja Kopernika
+Wroclaw	WRO	EPWR	Strachowice im. Mikolaja Kopernika
 Alesund	AES	ENAL	Vigra
 Amsterdam	AMS	EHAM	Schiphol
-Aberdeen	ABZ	EGPD	
+Aberdeen	ABZ	EGPD
 Alicante	ALC	LEAL	Alicante-Elche
 Ateny	ATH	LGAV	Eleftherios Venizelos International
 Atlanta	ATL	KATL	William B Hartsfield
@@ -57,7 +57,7 @@ Dusseldorf	DUS	EDDL	International
 Edinburgh	EDI	EGPH	Turnhouse
 Edmonton		CZVL	Villeneuve
 Eindhoven	EIN	EHEH	Eindhoven Airport
-Erywań	EVN	UDYZ	Zvarnots
+Erywan	EVN	UDYZ	Zvarnots
 Filadelfia	PHL	KPHL	International
 Florencja	FLR	LIRQ	Peretola
 Fort Lauderdale	FLL	KFLL	Fort Lauderdale / Hollywood International Airport
@@ -77,14 +77,14 @@ Houston (G. Bush Intl)	IAH	KIAH	George Bush Intercontinental
 Indianapolis	IND	KIND	Indianapolis International Airport
 Innsbruck	INN	LOWI	Kranebitten
 Inverness	INV	EGPE	Dalcross
-Istambuł	IST	LTBA	Ataturk
+Istambul	IST	LTBA	Ataturk
 Kaliningrad	KGD	-	Kaliningrad
 Keflavik	KEF	BIKF	Keflavik International Airport
-Kijów	KBP	UKBB	Borispol
+Kijow	KBP	UKBB	Borispol
 Klagenfurt	KLU	LOWK	Klagenfurt
 Kopenhaga	CPH	EKCH	Kastrup
 Korfu	CFU	LGKR	Ioannis Kapodistrias
-Koszyce	KSC	LZKZ	
+Koszyce	KSC	LZKZ
 Kutaisi	KUT	UGKO	Kopitnari
 Larnaka	LCA	LCLK	Larnaka
 Las Vegas	LAS	KLAS	Las Vegas, Mc Carran International Airport
@@ -99,7 +99,7 @@ Londyn	LTN	EGGW	Luton International Airport
 Londyn	STN	EGSS	Stansted
 Los Angeles	LAX	KLAX	Los Angeles International Airport
 Luksemburg	LUX	ELLX	Hoersching
-Lwów	LWO	UKLL	Lviv
+Lwow	LWO	UKLL	Lviv
 Lyon	LYS	LFLL	Satolas
 Madryt	MAD	LEMD	Barajas
 Malaga	AGP	LEMG	Malaga Costa del Sol Airport
@@ -113,7 +113,7 @@ Mediolan	MXP	LIMC	Malpensa
 Mediolan	LIN	LIML	Linate
 Mediolan	BGY	LIME	Bergamo - Orio Al Serio
 Minneapolis - St. Paul	MSP	KMSP	Minneapolis St. Paul International Airport
-Mińsk	MSQ	UMMS	Minsk International 2
+Minsk	MSQ	UMMS	Minsk International 2
 Montreal	YUL	CYUL	Pierre Elliot Trudeau International
 Montreal	YMX	CYMX	Mirabel
 Moskwa	SVO	UUEE	Sheremyetyevo
