@@ -18,6 +18,7 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -30,6 +31,7 @@ public class Flights {
     private LocalDate from;
     private LocalDate to;
     private long days;
+    private boolean stopped;
 
     @FXML
     private ResourceBundle resources;
@@ -113,18 +115,34 @@ public class Flights {
     }
 
     public void getUserInput(){
+        Window owner = plotButton.getScene().getWindow();;
         if (cb1.getValue() != null && !cb1.getValue().getIcaoCode().equals("null")) departure = cb1.getValue().getIcaoCode();
         else departure = "";
         if (cb2.getValue() != null && !cb2.getValue().getIcaoCode().equals("null")) arrival = cb2.getValue().getIcaoCode();
         else arrival = "";
+        if (arrival.equals("") && departure.equals("")){
+            stopped = true;
+            showAlert(Alert.AlertType.ERROR, owner, "Invalid airfields!", "Arrival or departure airfield must be given!");
+            return;
+        }
         try{
             to = LocalDate.parse(dateToField.getText());
         }catch (Exception e){
+            if (!dateToField.getText().equals("")){
+                stopped = true;
+                showAlert(Alert.AlertType.ERROR, owner, "Invalid date format!", "To date must be given in YYYY-MM-DD format");
+                return;
+            }
             to = LocalDate.now();
         }
         try {
             from = LocalDate.parse(dateFromField.getText());
         } catch (Exception e){
+            if (!dateFromField.getText().equals("")){
+                stopped = true;
+                showAlert(Alert.AlertType.ERROR, owner, "Invalid date format!", "From date must be given in YYYY-MM-DD format");
+                return;
+            }
             from = null;
         }
         if (from==null){
@@ -135,8 +153,21 @@ public class Flights {
         }
     }
 
+    private void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.initOwner(owner);
+        alert.show();
+    }
+
     @FXML
     void saveToFileAction(ActionEvent event) {
+        stopped = false;
+        getUserInput();
+        if (stopped)
+            return;
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Notepad", ".txt"),
@@ -145,15 +176,11 @@ public class Flights {
         );
         File file = fileChooser.showSaveDialog(null);
         if (file != null){
-            getUserInput();
             String fileToSave = file.getAbsolutePath();
-            Window owner = saveButton.getScene().getWindow();
             File fileToWrite = new File(fileToSave);
             FileWriter fileWriter;
             BufferedWriter bufferedWriter;
             try {
-                if (arrival.equals("") && departure.equals(""))
-                    return;
                 if (arrival.equals("")){
                     RequestMaker maker = new RequestMaker(to, departure, (int)days);
                     fileWriter = new FileWriter(fileToWrite);
@@ -177,9 +204,9 @@ public class Flights {
 
     @FXML
     void plotAction(ActionEvent event) {
+        stopped = false;
         getUserInput();
-        if (arrival.equals("") && departure.equals(""))
-            return;
+        if (stopped) return;
         RequestMaker maker;
         int[] daysOfWeek = new int[7];
         XYChart.Series series = new XYChart.Series<>();
