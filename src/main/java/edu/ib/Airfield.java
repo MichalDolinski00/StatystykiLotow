@@ -47,6 +47,7 @@ public class Airfield {
       To string is overridden to show most important information in ComboBox
      */
     public String toString() {
+        if (city.equals("null")) return "None";
         return city + "-" + icaoCode;
     }
 }
