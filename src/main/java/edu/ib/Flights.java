@@ -25,6 +25,14 @@ import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
 
+/**
+ * edu.ib.Flights
+ * A class used to interact with user
+ *
+ * @author FR, MD
+ * @version 1.0
+ * @since 2022-02-09
+ */
 public class Flights {
     private String departure;
     private String arrival;
@@ -70,19 +78,13 @@ public class Flights {
     @FXML
     private ComboBox<Airfield> cb2;
 
-
+    /**
+     * Clears the graph
+     * @param event on button click
+     */
     @FXML
     void clearAction(ActionEvent event) {
         graph.getData().clear();
-        XYChart.Series series = new XYChart.Series<>();
-        series.getData().add(new XYChart.Data<>(DayOfWeek.MONDAY.toString(), 0));
-        series.getData().add(new XYChart.Data<>(DayOfWeek.TUESDAY.toString(), 0));
-        series.getData().add(new XYChart.Data<>(DayOfWeek.WEDNESDAY.toString(), 0));
-        series.getData().add(new XYChart.Data<>(DayOfWeek.THURSDAY.toString(), 0));
-        series.getData().add(new XYChart.Data<>(DayOfWeek.FRIDAY.toString(), 0));
-        series.getData().add(new XYChart.Data<>(DayOfWeek.SATURDAY.toString(), 0));
-        series.getData().add(new XYChart.Data<>(DayOfWeek.SUNDAY.toString(), 0));
-        graph.getData().addAll(series);
     }
 
     private ArrayList<Airfield> GettingAirfields() {
@@ -114,7 +116,10 @@ public class Flights {
 
     }
 
-    public void getUserInput(){
+    /**
+     * Class gets users input from fields and shows alerts if rogue data appears
+     */
+    private void getUserInput(){
         Window owner = plotButton.getScene().getWindow();;
         if (cb1.getValue() != null && !cb1.getValue().getIcaoCode().equals("null")) departure = cb1.getValue().getIcaoCode();
         else departure = "";
@@ -153,6 +158,13 @@ public class Flights {
         }
     }
 
+    /**
+     * Methode displays a specific alert
+     * @param alertType type of alert
+     * @param owner window stopped by alert
+     * @param title tile of alert
+     * @param message message of alert
+     */
     private void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
@@ -162,6 +174,10 @@ public class Flights {
         alert.show();
     }
 
+    /**
+     * Methode saves flight of set parameters to chosen file
+     * @param event on button click
+     */
     @FXML
     void saveToFileAction(ActionEvent event) {
         stopped = false;
@@ -181,27 +197,40 @@ public class Flights {
             FileWriter fileWriter;
             BufferedWriter bufferedWriter;
             try {
-                if (arrival.equals("")){
-                    RequestMaker maker = new RequestMaker(to, departure, (int)days);
+                RequestMaker maker;
+                if (departure.equals("")){
+                    maker = new RequestMaker(to, arrival, (int)days);
+                    maker.setDeparture(false);
+                } else maker = new RequestMaker(to, departure, (int)days);
                     fileWriter = new FileWriter(fileToWrite);
                     bufferedWriter = new BufferedWriter(fileWriter);
                     bufferedWriter.write("Flight from\tTo\tDeparture Date\tArrival Date\tDeparture Day\tArrival Day");
                     bufferedWriter.newLine();
+                    if (arrival.equals(""))
                     for (Flight flight: maker.getFlights()){
                         bufferedWriter.write(flight.getFrom() + "\t" + flight.getTo() + "\t" + flight.getDeparture()
                                 + "\t" + flight.getArrival() + "\t" + flight.getDepartureDay() +"\t"+ flight.getArrivalDay());
                         bufferedWriter.newLine();
                     }
+                    else
+                        for (Flight flight: maker.getFlights()){
+                            if (flight.getTo().equals(arrival)){
+                                bufferedWriter.write(flight.getFrom() + "\t" + flight.getTo() + "\t" + flight.getDeparture()
+                                        + "\t" + flight.getArrival() + "\t" + flight.getDepartureDay() +"\t"+ flight.getArrivalDay());
+                                bufferedWriter.newLine();
+                            }
+                    }
                     bufferedWriter.close();
                     fileWriter.close();
-                    System.out.println("Saved");
-                }
             } catch (IOException e){
                 System.out.println(e.getMessage());
             }
-
         }}
 
+    /**
+     * Methode plots flights of set parameters on graph
+     * @param event on button click
+     */
     @FXML
     void plotAction(ActionEvent event) {
         stopped = false;
@@ -267,6 +296,9 @@ public class Flights {
         graph.getData().addAll(series);
     }
 
+    /**
+     * Methode initializes scene
+     */
     @FXML
     void initialize() {
         assert a_dayOfTheWeek != null : "fx:id=\"a_dayOfTheWeek\" was not injected: check your FXML file 'Flights.fxml'.";
@@ -276,16 +308,7 @@ public class Flights {
         assert departureAirfieldField != null : "fx:id=\"departureAirfieldField\" was not injected: check your FXML file 'Flights.fxml'.";
         assert graph != null : "fx:id=\"graph\" was not injected: check your FXML file 'Flights.fxml'.";
         assert plotButton != null : "fx:id=\"plotButton\" was not injected: check your FXML file 'Flights.fxml'.";
-        XYChart.Series series = new XYChart.Series<>();
-        series.getData().add(new XYChart.Data<>(DayOfWeek.MONDAY.toString(), 0));
-        series.getData().add(new XYChart.Data<>(DayOfWeek.TUESDAY.toString(), 0));
-        series.getData().add(new XYChart.Data<>(DayOfWeek.WEDNESDAY.toString(), 0));
-        series.getData().add(new XYChart.Data<>(DayOfWeek.THURSDAY.toString(), 0));
-        series.getData().add(new XYChart.Data<>(DayOfWeek.FRIDAY.toString(), 0));
-        series.getData().add(new XYChart.Data<>(DayOfWeek.SATURDAY.toString(), 0));
-        series.getData().add(new XYChart.Data<>(DayOfWeek.SUNDAY.toString(), 0));
-        graph.getData().addAll(series);
-
+        graph.setAnimated(false);
         ArrayList<Airfield> airfields = GettingAirfields();
         ObservableList<Airfield> options = FXCollections.observableArrayList(airfields);
         cb1.setItems(options);

@@ -1,7 +1,12 @@
 package edu.ib;
 
 /**
- * A class that represents an airfield. Contains moist important information such as city name and codes.
+ * edu.ib.Airfield
+ *  A class that represents an airfield. Contains moist important information such as city name and codes.
+ *
+ * @author FR, MD
+ * @version 1.0
+ * @since 2022-02-09
  */
 public class Airfield {
 

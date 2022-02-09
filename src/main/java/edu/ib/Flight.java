@@ -4,7 +4,12 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 /**
- * A class representing single flight.
+ * edu.ib.Flight
+ * class holding and displaying information about flight
+ *
+ * @author FR, MD
+ * @version 1.0
+ * @since 2022-02-09
  */
 public class Flight {
     private String from;
