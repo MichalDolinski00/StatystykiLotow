@@ -131,10 +131,10 @@ Oslo	OSL	ENGM	Gardermoen
 Oslo Torp	TRF	ENTO	Oslo Torp Lufthavn
 Ottawa	YOW	CYOW	Ottawa International Ontario
 Palma de Mallorca	PMI	LEPA	Son San Juan
-Paryż	CDG	LFPG	Charles de Gaulle
-Paryż	ORY	LFPO	Orly
-Paryż	BVA	LFOB	Beauvais - Tille Airport
-Paryż	LBG	LFPB	Le Bourget
+Paryz	CDG	LFPG	Charles de Gaulle
+Paryz	ORY	LFPO	Orly
+Paryz	BVA	LFOB	Beauvais - Tille Airport
+Paryz	LBG	LFPB	Le Bourget
 Pekin	PEK	ZBAA	Capital International Airport
 Phoenix	PHX	KPHX	Sky Harbor International Airport
 Pittsburgh	PIT	KPIT	Pittsburgh International Airport
@@ -175,7 +175,7 @@ Turyn	TRN	LIMF	Caselle
 Vancouver	YVR	CYVR	Vancouver International
 Wenecja	VCE	LIPZ	Tessera - Marco Polo
 Werona	VRN	LIPX	Villafranca
-Wiedeń	VIE	LOWW	Schwechat
+Wieden	VIE	LOWW	Schwechat
 Wilno	VNO	EYVI	International
 Waszyngton DC	IAD	KIAD	Dulles International Airport
 Waszyngton DC	DCA	KDCA	Ronald Reagan National Airport

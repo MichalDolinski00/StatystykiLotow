@@ -88,7 +88,7 @@ public class Flights {
 
     private ArrayList<Airfield> GettingAirfields() {
         // naprawde nie wiem czemu nie widzie tego pliku kiedy podaję mu tylko część ścieżki
-        File file = new File("C:\\Users\\olins\\Desktop\\Projekty IntelliJ\\StatystykiLotow\\src\\main\\java\\Lotniska.txt");
+        File file = new File("C:\\Users\\Dell\\IdeaProjects\\StatystykiLotow\\src\\main\\java\\Lotniska.txt");
 
         ArrayList<Airfield> airfields = new ArrayList<Airfield>();
         try {
