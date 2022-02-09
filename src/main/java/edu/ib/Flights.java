@@ -84,21 +84,19 @@ public class Flights {
     private ArrayList<Airfield> GettingAirfields() {
         File file = new File("C:\\Users\\Dell\\IdeaProjects\\StatystykiLotow\\src\\main\\java\\Lotniska.txt");
 
-        ArrayList<Airfield> airfields = new ArrayList<Airfield>();
+        ArrayList<Airfield> airfields = new ArrayList<>();
         try {
             Reader reader = new FileReader(file);
             BufferedReader br = new BufferedReader(reader);
             String st1;
-            String[] st2 = new String[4];
+            String[] st2;
             while ((st1 = br.readLine()) != null) {
                 st2 = st1.split("\t");
                 if (st2.length == 4)
                     airfields.add(new Airfield(st2[0], st2[1], st2[2], st2[0]));
                 else
-                    airfields.add(new Airfield(st2[0], st2[1], st2[2], "-"));   // jak nie ma ostatniego to jest bez nazwy
+                    airfields.add(new Airfield(st2[0], st2[1], st2[2], "-"));
             }
-
-
             br.close();
             reader.close();
         } catch (FileNotFoundException e) {
@@ -188,7 +186,6 @@ public class Flights {
             series.setName("From " + departure + " since " + from + " to " + to);
             maker = new RequestMaker(to, departure, (int)days);
             for (Flight flight: maker.getFlights()){
-                System.out.println(flight);
                 switch (flight.getDepartureDay()){
                     case MONDAY -> daysOfWeek[0]++;
                     case TUESDAY -> daysOfWeek[1]++;
