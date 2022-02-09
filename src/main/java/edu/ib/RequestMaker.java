@@ -105,7 +105,6 @@ public class RequestMaker {
                     "&begin="+date.minusDays(Math.min(period,7)+past).atStartOfDay(zoneId).toEpochSecond() +  // data 5 dni temu w unixie (test czy działa)
                     "&end="+date.minusDays(past).atStartOfDay(zoneId).toEpochSecond();
 
-            System.out.println(url);
 
             try {
                 URL obj = new URL(url);

@@ -19,7 +19,6 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
 
@@ -36,14 +35,10 @@ public class Flights {
     @FXML
     private URL location;
 
-    @FXML
-    private TextField arrivalAirportField;
 
     @FXML
     private CategoryAxis a_dayOfTheWeek;
 
-    @FXML
-    private Button clearButton;
 
     @FXML
     private NumberAxis a_numberOfPlanes;
@@ -87,7 +82,6 @@ public class Flights {
     }
 
     private ArrayList<Airfield> GettingAirfields() {
-        // naprawde nie wiem czemu nie widzie tego pliku kiedy podaję mu tylko część ścieżki
         File file = new File("C:\\Users\\Dell\\IdeaProjects\\StatystykiLotow\\src\\main\\java\\Lotniska.txt");
 
         ArrayList<Airfield> airfields = new ArrayList<Airfield>();
@@ -113,17 +107,12 @@ public class Flights {
             e.printStackTrace();
         }
 
-//        for (Airfield airfield : airfields){
-//            System.out.println(airfield.getIcaoCode());
-//        }
 
         return airfields;
 
     }
 
     public void getUserInput(){
-//        departure = departureAirfieldField.getText();
-//        arrival = arrivalAirportField.getText();
         if (cb1.getValue() != null && !cb1.getValue().getIcaoCode().equals("null")) departure = cb1.getValue().getIcaoCode();
         else departure = "";
         if (cb2.getValue() != null && !cb2.getValue().getIcaoCode().equals("null")) arrival = cb2.getValue().getIcaoCode();
@@ -228,7 +217,6 @@ public class Flights {
             series.setName("From " + departure + " to "+arrival+" since " + from + " to " + to);
             maker = new RequestMaker(to, departure, (int)days);
             for (Flight flight: maker.getFlights()){
-//                System.out.println(flight.getTo());
                 if (flight.getTo().equals(arrival))
                     switch (flight.getDepartureDay()){
                         case MONDAY -> daysOfWeek[0]++;
@@ -255,7 +243,6 @@ public class Flights {
 
     @FXML
     void initialize() {
-        assert arrivalAirportField != null : "fx:id=\"ArrivalAirportField\" was not injected: check your FXML file 'Flights.fxml'.";
         assert a_dayOfTheWeek != null : "fx:id=\"a_dayOfTheWeek\" was not injected: check your FXML file 'Flights.fxml'.";
         assert a_numberOfPlanes != null : "fx:id=\"a_numberOfPlanes\" was not injected: check your FXML file 'Flights.fxml'.";
         assert dateFromField != null : "fx:id=\"dateFromField\" was not injected: check your FXML file 'Flights.fxml'.";
