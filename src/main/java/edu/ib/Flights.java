@@ -4,6 +4,8 @@ import java.io.*;
 import java.net.URL;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -261,6 +263,8 @@ public class Flights {
         ObservableList<Airfield> options = FXCollections.observableArrayList(airfields);
         cb1.setItems(options);
         cb2.setItems(options);
+
+        dateToField.setPromptText(LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
     }
 
 }
