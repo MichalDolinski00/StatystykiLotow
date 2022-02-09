@@ -1,16 +1,16 @@
 null	null	null	null
 Bydgoszcz	BZG 	EPBY	Szwederowo
-Gdańsk	GDN	EPGD	Rębiechowo / im. Lecha Wałęsy
+Gdansk	GDN	EPGD	Rebiechowo / im. Lecha Wałesy
 Katowice	KTW	EPKT	Pyrzowice
-Kraków	KRK	EPKK	Balice / im. Jana Pawła II
-Lublin	LUZ	EPLB	Port Lotniczy Lublin - Świdnik
-Łódź	LCJ	EPLL	Lublinek
+Krakow	KRK	EPKK	Balice / im. Jana Pawla II
+Lublin	LUZ	EPLB	Port Lotniczy Lublin - Swidnik
+Lodz	LCJ	EPLL	Lublinek
 Olsztyn-Mazury (Szymany)	SZY	EPSY	Port Lotniczy Olsztyn-Mazury w Szymanach
-Poznań	POZ	EPPO	Ławica im. Henryka Wieniawskiego
-Radom	RDO	EPRA	Port Lotniczy Radom Sadków
-Rzeszów	RZE	EPRZ	Jasionka
-Szczecin	SZZ	EPSC	Goleniów im. NSZZ Solidarność
-Warszawa - Okęcie	WAW	EPWA	Okęcie / im. Fryderyka Chopina
+Poznan	POZ	EPPO	Lawica im. Henryka Wieniawskiego
+Radom	RDO	EPRA	Port Lotniczy Radom Sadkow
+Rzeszow	RZE	EPRZ	Jasionka
+Szczecin	SZZ	EPSC	Goleniów im. NSZZ Solidarnosc
+Warszawa - Okecie	WAW	EPWA	Okecie / im. Fryderyka Chopina
 Warszawa - Modlin	WMI	EPMO	Modlin
 Wrocław	WRO	EPWR	Strachowice im. Mikołaja Kopernika
 Alesund	AES	ENAL	Vigra

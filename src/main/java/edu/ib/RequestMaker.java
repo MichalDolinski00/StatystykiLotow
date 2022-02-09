@@ -10,6 +10,9 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
 
+/**
+ * A class that connects to the api and pulls data.
+ */
 public class RequestMaker {
     private long unixTime = System.currentTimeMillis() / 1000L; // current Unix time
     private LocalDate date;   // dzisiejsza data
@@ -17,6 +20,8 @@ public class RequestMaker {
     private long epoch; // zamienia czas na unix - używany przez api
     private String airport = "EPWR";
     private int period = 7;
+    private boolean departure = true;
+
 
     public boolean isDeparture() {
         return departure;
@@ -25,8 +30,6 @@ public class RequestMaker {
     public void setDeparture(boolean departure) {
         this.departure = departure;
     }
-
-    private boolean departure = true;
 
     public RequestMaker(LocalDate date, String airport, int period) {
         this.date = date;
