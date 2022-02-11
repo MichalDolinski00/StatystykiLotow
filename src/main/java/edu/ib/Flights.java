@@ -88,7 +88,8 @@ public class Flights {
     }
 
     private ArrayList<Airfield> GettingAirfields() {
-        File file = new File("C:\\Users\\Dell\\IdeaProjects\\StatystykiLotow\\src\\main\\java\\Lotniska.txt");
+        // uwaga na lokalizację pliku
+        File file = new File("C:\\Users\\olins\\Desktop\\Projekty IntelliJ\\StatystykiLotow\\src\\main\\java\\Lotniska.txt");
 
         ArrayList<Airfield> airfields = new ArrayList<>();
         try {
